@@ -16,7 +16,7 @@ $images = scandir($path);
 if (false !== $images) {
     $images = preg_grep('/\\.(?:png|gif|jpe?g)$/', $images);
     foreach ($images as $image)
-        echo '<img src="/image/', htmlspecialchars(urlencode($image)),'" />';
+        echo '<img src="/img/', htmlspecialchars(urlencode($image)),'" />';
 }
 ?>
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
