@@ -10,8 +10,14 @@
 </head>
 <body>
 <h1>Hello, world!</h1>
-<?php
-echo "HEllow PHP";
+<?
+$path = $_SERVER['DOCUMENT_ROOT'] . '/img/';
+$images = scandir($path);
+if (false !== $images) {
+    $images = preg_grep('/\\.(?:png|gif|jpe?g)$/', $images);
+    foreach ($images as $image)
+        echo '<img src="/image/', htmlspecialchars(urlencode($image)),'" />';
+}
 ?>
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
