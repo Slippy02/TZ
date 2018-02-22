@@ -22,9 +22,9 @@ if (false !== $images) {
     $images = preg_grep('/\\.(?:png|gif|jpe?g)$/', $images);
     sort($images, SORT_NUMERIC | SORT_FLAG_CASE);
     foreach ($images as $image)
-        echo '<img height="100" width="100" alt="Where is IMG?" class="col-12 order-1" src="/img/', htmlspecialchars(urlencode($image)),'" />';
+        echo '<img height="100" width="100" alt="Where is IMG?" class="col-12 order-1 hidden-xs" src="/img/', htmlspecialchars(urlencode($image)),'" />';
 }
-echo '<img height="100" width="100" alt="Where is IMG?" class="col-10 order-lg-1" src="/img/', htmlspecialchars(urlencode($image)),'" />';
+
 ?>
 
 </div>
