@@ -15,7 +15,7 @@ $path = $_SERVER['DOCUMENT_ROOT'] . '/img/';
 $images = scandir($path);
 if (false !== $images) {
     $images = preg_grep('/\\.(?:png|gif|jpe?g)$/', $images);
-    $images= sort($images, SORT_NUMERIC | SORT_FLAG_CASE);
+    sort($images, SORT_NUMERIC | SORT_FLAG_CASE);
     foreach ($images as $image)
         echo '<img height="100" width="100" alt="Where is IMG?" src="/img/', htmlspecialchars(urlencode($image)),'" />';
 }
