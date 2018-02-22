@@ -12,7 +12,7 @@
 <h1>Hello, world!</h1>
 <?
 $path = $_SERVER['DOCUMENT_ROOT'] . '/img/';
-$images = scandir($path);
+$images = scandir($path,0);
 if (false !== $images) {
     $images = preg_grep('/\\.(?:png|gif|jpe?g)$/', $images);
     foreach ($images as $image)
